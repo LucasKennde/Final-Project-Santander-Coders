@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -16,11 +17,14 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./signin.component.css'],
 })
 export class SigninComponent {
-  signinService = inject(SigninService);
-
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private toastr: ToastrService) {
+  constructor(
+    private fb: FormBuilder,
+    private toastr: ToastrService,
+    private signinService: SigninService,
+    private router: Router
+  ) {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required]],
@@ -34,6 +38,7 @@ export class SigninComponent {
           console.log('Login bem-sucedido:', response);
           localStorage.setItem('accessToken', response.accessToken);
           this.toastr.success('Login bem-sucedido!', 'Sucesso');
+          this.router.navigate(['/']);
         },
         error: (err) => {
           console.error('Erro no login:', err);
