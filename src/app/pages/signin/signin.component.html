@@ -1,1 +1,53 @@
-<p>signin works!</p>
+<div class="grid grid-cols-12 mx-24">
+  <div class="col-start-5 col-end-9 flex flex-col gap-5">
+    <h1 class="font-pixel text-9xl text-pixel-orange">JOKENPO!</h1>
+    <div class="border-2 border-pixel-yellow grid grid-cols-8 mx-8">
+      <div class="col-start-2 col-end-8 my-12">
+        <div class="flex flex-col">
+          <h2 class="font-pixel text-4xl text-pixel-white">
+            Faça o seu Login!
+          </h2>
+          <p class="font-pixel text-lg text-pixel-white">
+            Preencha as informações abaixo
+          </p>
+        </div>
+        <form class="my-6">
+          <div class="flex flex-col gap-8">
+            <input type="text" placeholder="Nome de Usuário" class="input" />
+            <input type="password" placeholder="Senha" class="input" />
+          </div>
+          <a class="font-pixel text-lg text-pixel-yellow cursor-pointer"
+            >Esqueceu sua senha?</a
+          >
+          <div class="grid grid-cols-7 my-8">
+            <button
+              class="col-start-1 col-end-4 bg-pixel-yellow font-pixel font-bold text-pixel-white text-lg"
+            >
+              LOG IN
+            </button>
+            <div class="col-start-4 col-end-8 mx-2">
+              <p class="font-pixel text-lg text-pixel-white">
+                Não possui cadastro?
+              </p>
+              <a class="font-pixel text-lg text-pixel-yellow cursor-pointer"
+                >Cadastre-se aqui!</a
+              >
+            </div>
+          </div>
+        </form>
+        <div class="flex items-center">
+          <div class="flex-grow h-[2px] bg-pixel-yellow"></div>
+          <p class="mx-4 font-pixel text-base text-pixel-white my-8">
+            ou continue com
+          </p>
+          <div class="flex-grow h-[2px] bg-pixel-yellow"></div>
+        </div>
+        <a
+          class="w-full border-[1px] border-pixel-yellow flex justify-center items-center p-3 cursor-pointer"
+        >
+          <img src="../../../assets/google.svg" alt="google" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

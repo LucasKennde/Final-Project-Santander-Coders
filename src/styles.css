@@ -3,3 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.input {
+  @apply w-full font-pixel font-bold text-lg text-pixel-white bg-transparent border-t-0 border-l-0 border-r-0 border-b-[1px] border-pixel-yellow p-1 focus:outline-none;
+}
