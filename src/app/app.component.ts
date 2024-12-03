@@ -20,7 +20,7 @@ export class AppComponent {
     this.generateGrid();
   }
   getRandomBoolean(): boolean {
-    return Math.random() >= 0.5;
+    return Math.random() * 2 <= 0.5;
   }
   generateGrid() {
     const squareSize = 80;
@@ -30,8 +30,8 @@ export class AppComponent {
         this.squares.push({
           size: squareSize,
           exist: this.getRandomBoolean(),
-          top: row * squareSize + 1 * row,
-          left: col * squareSize + 1 * col,
+          top: row * squareSize + 0 * row,
+          left: col * squareSize + 0 * col,
         });
       }
     }
