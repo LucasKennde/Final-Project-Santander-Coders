@@ -11,10 +11,20 @@
             Preencha as informações abaixo
           </p>
         </div>
-        <form class="my-6">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="my-6">
           <div class="flex flex-col gap-8">
-            <input type="text" placeholder="Nome de Usuário" class="input" />
-            <input type="password" placeholder="Senha" class="input" />
+            <input
+              type="text"
+              placeholder="Nome de Usuário"
+              formControlName="username"
+              class="input"
+            />
+            <input
+              type="password"
+              placeholder="Senha"
+              formControlName="password"
+              class="input"
+            />
           </div>
           <a class="font-pixel text-lg text-pixel-yellow cursor-pointer"
             >Esqueceu sua senha?</a
