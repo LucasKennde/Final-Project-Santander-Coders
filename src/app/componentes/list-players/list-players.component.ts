@@ -28,6 +28,8 @@ export class ListPlayersComponent {
   }
 
   ngOnDestroy() {
+    if (this.usersSubscription) {
     this.usersSubscription.unsubscribe();
+  }
   }
 }
