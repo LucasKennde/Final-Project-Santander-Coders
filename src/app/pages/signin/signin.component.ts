@@ -8,11 +8,12 @@ import {
 } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Router, RouterLink } from '@angular/router';
+import { FooterComponent } from "../../componentes/footer/footer.component";
 
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, FooterComponent],
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css'],
 })

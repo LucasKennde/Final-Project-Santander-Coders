@@ -26,7 +26,6 @@ export class AppComponent {
     const squareSize = 80;
     for (let row = 0; row < this.gridRows; row++) {
       for (let col = 0; col < this.gridCols; col++) {
-
         this.squares.push({
           size: squareSize,
           exist: this.getRandomBoolean(),
