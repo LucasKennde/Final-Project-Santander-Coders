@@ -1,4 +1,6 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { heroEye, heroEyeSlash } from '@ng-icons/heroicons/outline';
+import { Component, inject } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -12,25 +14,37 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-signin-form',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule],
+  imports: [RouterLink, ReactiveFormsModule, NgIcon],
   templateUrl: './signin-form.component.html',
   styleUrl: './signin-form.component.css',
 })
 export class SigninFormComponent {
-  @Input() isLoading: boolean = false;
-
   private fb = inject(FormBuilder);
   private router = inject(Router);
   private signinService = inject(SigninService);
   private toastr = inject(ToastrService);
 
   loginForm: FormGroup;
+  isPasswordVisible = false;
+  typePassword = 'password';
 
   constructor() {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required]],
     });
+  }
+
+  changeTypePassword() {
+    this.isPasswordVisible = !this.isPasswordVisible;
+    this.typePassword = this.isPasswordVisible ? 'text' : 'password';
+  }
+
+  ngOnInit() {
+    if (localStorage.getItem('accessToken')) {
+      this.toastr.success('Você já está logado!', 'Redirecionando');
+      this.router.navigate(['/']);
+    }
   }
 
   onSubmit() {

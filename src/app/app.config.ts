@@ -4,6 +4,8 @@ import { routes } from './app.routes';
 import { provideHttpClient, withFetch } from '@angular/common/http'; // Adicione 'withFetch'
 import { provideToastr } from 'ngx-toastr';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideIcons } from '@ng-icons/core';
+import { heroEye, heroEyeSlash } from '@ng-icons/heroicons/outline';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,5 +18,6 @@ export const appConfig: ApplicationConfig = {
       timeOut: 3000,
       progressBar: true,
     }),
+    provideIcons({ heroEye, heroEyeSlash }),
   ],
 };

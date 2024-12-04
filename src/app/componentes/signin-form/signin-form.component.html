@@ -1,17 +1,39 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="my-6">
   <div class="flex flex-col gap-8">
-    <input
-      type="text"
-      placeholder="Nome de Usuário"
-      formControlName="username"
-      class="input"
-    />
-    <input
-      type="password"
-      placeholder="Senha"
-      formControlName="password"
-      class="input"
-    />
+    <div
+      class="w-full border-t-0 border-r-0 border-l-0 border-b-[1px] border-pixel-yellow"
+    >
+      <input
+        type="text"
+        placeholder="Nome de Usuário"
+        formControlName="username"
+        class="w-full font-pixel font-light text-xl text-pixel-white bg-transparent focus:outline-none"
+      />
+    </div>
+
+    <div
+      class="flex flex-row items-center w-full border-t-0 border-r-0 border-l-0 border-b-[1px] border-pixel-yellow"
+    >
+      <input
+        type="{{ typePassword }}"
+        placeholder="Senha"
+        formControlName="password"
+        class="w-full font-pixel font-light text-xl text-pixel-white bg-transparent focus:outline-none"
+      />
+      @if(isPasswordVisible){
+      <ng-icon
+        name="heroEyeSlash"
+        (click)="changeTypePassword()"
+        class="text-pixel-yellow text-2xl"
+      />
+      }@else {
+      <ng-icon
+        name="heroEye"
+        (click)="changeTypePassword()"
+        class="text-pixel-yellow text-2xl"
+      />
+      }
+    </div>
   </div>
   <a class="font-pixel text-lg text-pixel-yellow cursor-pointer"
     >Esqueceu sua senha?</a
@@ -19,9 +41,8 @@
   <div class="grid grid-cols-7 my-8">
     <button
       class="col-start-1 col-end-4 bg-pixel-yellow font-pixel font-bold text-pixel-white text-lg"
-      [disabled]="isLoading"
     >
-      {{ isLoading ? "Carregando..." : "LOG IN" }}
+      LOG IN
     </button>
     <div class="col-start-4 col-end-8 mx-2">
       <p class="font-pixel text-lg text-pixel-white">Não possui cadastro?</p>
