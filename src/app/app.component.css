@@ -1,207 +1,210 @@
 .background {
-    background: rgb(2, 110, 149);
-    background: linear-gradient(0deg, rgba(2, 110, 149, 1) 0%, rgba(15, 162, 158, 1) 100%);
+  background: rgb(2, 110, 149);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 110, 149, 1) 0%,
+    rgba(15, 162, 158, 1) 100%
+  );
 }
 
 .blur {
-    position: absolute;
-    z-index: -2;
-    border-radius: 100%;
-    filter: blur(60px);
-    background: radial-gradient(circle, rgba(250, 171, 25, 1) 0%, rgba(102, 111, 84, 0) 100%);
+  position: absolute;
+  z-index: -2;
+  border-radius: 100%;
+  filter: blur(60px);
+  background: radial-gradient(
+    circle,
+    rgba(250, 171, 25, 1) 0%,
+    rgba(102, 111, 84, 0) 100%
+  );
 }
 
 .blur1 {
+  top: 10%;
+  left: 15%;
+  width: 400px;
+  height: 400px;
+  animation: moveBlur1 20s infinite;
+}
+
+.blur2 {
+  top: 50%;
+  left: 70%;
+  width: 300px;
+  height: 300px;
+  animation: moveBlur2 25s infinite;
+}
+
+.blur3 {
+  top: 80%;
+  left: 30%;
+  width: 550px;
+  height: 550px;
+  animation: moveBlur3 30s infinite;
+}
+
+.blur4 {
+  top: 40%;
+  left: 10%;
+  width: 350px;
+  height: 350px;
+  animation: moveBlur4 28s infinite;
+}
+
+.square {
+  position: absolute;
+  border-radius: 2px;
+  transition: opacity 0.5s ease;
+  height: 80px;
+  width: 80px;
+  display: inline-block;
+  opacity: 0.7;
+}
+
+@keyframes moveBlur1 {
+  0% {
     top: 10%;
     left: 15%;
     width: 400px;
     height: 400px;
-    animation: moveBlur1 20s infinite;
+  }
+
+  25% {
+    top: 20%;
+    left: 40%;
+    width: 450px;
+    height: 450px;
+  }
+
+  50% {
+    top: 50%;
+    left: 20%;
+    width: 300px;
+    height: 300px;
+  }
+
+  75% {
+    top: 30%;
+    left: 60%;
+    width: 500px;
+    height: 500px;
+  }
+
+  100% {
+    top: 10%;
+    left: 15%;
+    width: 400px;
+    height: 400px;
+  }
 }
 
-
-.blur2 {
+@keyframes moveBlur2 {
+  0% {
     top: 50%;
     left: 70%;
     width: 300px;
     height: 300px;
-    animation: moveBlur2 25s infinite;
+  }
+
+  25% {
+    top: 60%;
+    left: 80%;
+    width: 350px;
+    height: 350px;
+  }
+
+  50% {
+    top: 30%;
+    left: 50%;
+    width: 250px;
+    height: 250px;
+  }
+
+  75% {
+    top: 20%;
+    left: 90%;
+    width: 400px;
+    height: 400px;
+  }
+
+  100% {
+    top: 50%;
+    left: 70%;
+    width: 300px;
+    height: 300px;
+  }
 }
 
-.blur3 {
+@keyframes moveBlur3 {
+  0% {
     top: 80%;
     left: 30%;
     width: 550px;
     height: 550px;
-    animation: moveBlur3 30s infinite;
+  }
+
+  25% {
+    top: 70%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+  }
+
+  50% {
+    top: 90%;
+    left: 10%;
+    width: 500px;
+    height: 500px;
+  }
+
+  75% {
+    top: 60%;
+    left: 40%;
+    width: 650px;
+    height: 650px;
+  }
+
+  100% {
+    top: 80%;
+    left: 30%;
+    width: 550px;
+    height: 550px;
+  }
 }
 
-.blur4 {
+@keyframes moveBlur4 {
+  0% {
     top: 40%;
     left: 10%;
     width: 350px;
     height: 350px;
-    animation: moveBlur4 28s infinite;
-}
+  }
 
+  25% {
+    top: 60%;
+    left: 30%;
+    width: 400px;
+    height: 400px;
+  }
 
-.square {
-    position: absolute;
-    border-radius: 2px;
-    transition: opacity 0.5s ease;
-    height: 80px;
-    width: 80px;
-    display: inline-block;
-    opacity: 0.7;
-}
+  50% {
+    top: 20%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+  }
 
+  75% {
+    top: 50%;
+    left: 70%;
+    width: 450px;
+    height: 450px;
+  }
 
-
-
-@keyframes moveBlur1 {
-    0% {
-        top: 10%;
-        left: 15%;
-        width: 400px;
-        height: 400px;
-    }
-
-    25% {
-        top: 20%;
-        left: 40%;
-        width: 450px;
-        height: 450px;
-    }
-
-    50% {
-        top: 50%;
-        left: 20%;
-        width: 300px;
-        height: 300px;
-    }
-
-    75% {
-        top: 30%;
-        left: 60%;
-        width: 500px;
-        height: 500px;
-    }
-
-    100% {
-        top: 10%;
-        left: 15%;
-        width: 400px;
-        height: 400px;
-    }
-}
-
-@keyframes moveBlur2 {
-    0% {
-        top: 50%;
-        left: 70%;
-        width: 300px;
-        height: 300px;
-    }
-
-    25% {
-        top: 60%;
-        left: 80%;
-        width: 350px;
-        height: 350px;
-    }
-
-    50% {
-        top: 30%;
-        left: 50%;
-        width: 250px;
-        height: 250px;
-    }
-
-    75% {
-        top: 20%;
-        left: 90%;
-        width: 400px;
-        height: 400px;
-    }
-
-    100% {
-        top: 50%;
-        left: 70%;
-        width: 300px;
-        height: 300px;
-    }
-}
-
-@keyframes moveBlur3 {
-    0% {
-        top: 80%;
-        left: 30%;
-        width: 550px;
-        height: 550px;
-    }
-
-    25% {
-        top: 70%;
-        left: 50%;
-        width: 600px;
-        height: 600px;
-    }
-
-    50% {
-        top: 90%;
-        left: 10%;
-        width: 500px;
-        height: 500px;
-    }
-
-    75% {
-        top: 60%;
-        left: 40%;
-        width: 650px;
-        height: 650px;
-    }
-
-    100% {
-        top: 80%;
-        left: 30%;
-        width: 550px;
-        height: 550px;
-    }
-}
-
-@keyframes moveBlur4 {
-    0% {
-        top: 40%;
-        left: 10%;
-        width: 350px;
-        height: 350px;
-    }
-
-    25% {
-        top: 60%;
-        left: 30%;
-        width: 400px;
-        height: 400px;
-    }
-
-    50% {
-        top: 20%;
-        left: 50%;
-        width: 300px;
-        height: 300px;
-    }
-
-    75% {
-        top: 50%;
-        left: 70%;
-        width: 450px;
-        height: 450px;
-    }
-
-    100% {
-        top: 40%;
-        left: 10%;
-        width: 350px;
-        height: 350px;
-    }
+  100% {
+    top: 40%;
+    left: 10%;
+    width: 350px;
+    height: 350px;
+  }
 }

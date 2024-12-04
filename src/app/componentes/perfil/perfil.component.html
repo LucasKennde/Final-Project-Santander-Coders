@@ -1,1 +1,16 @@
-<p>perfil works!</p>
+<div
+    class="w-full h-full bg-pixel-dark-teal/20 backdrop:filter backdrop-blur-md border-r-2 border-pixel-yellow flex flex-col items-center justify-between py-20 font-pixel text-pixel-white">
+    <div>
+        <img src='http:localhost:3000/' alt>
+    </div>
+    <div>
+        <h1>USUARIO: {{user().username}}</h1>
+        <h1>Nome: {{user().image}}</h1>
+        <h1>SCORE:</h1>
+    </div>
+    <div class="w-3/5">
+        <button
+            class=" w-full text-4xl p-4 bg-pixel-yellow hover:border-x-pixel-orange ">LOG
+            OUT</button>
+    </div>
+</div>
