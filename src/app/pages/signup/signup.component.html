@@ -1,1 +1,50 @@
-<p>signup works!</p>
+<div class="w-screen h-full flex flex-col items-center gap-8 px-4">
+    <h1
+        class="font-pixel text-9xl font-bold text-pixel-orange max-[580px]:text-7xl">JOKENPO!</h1>
+    <div
+        class="border-2 border-pixel-yellow  w-full max-w-[544px] bg-pixel-dark-teal/70 backdrop:filter backdrop-blur-md flex flex-col items-center p-8 gap-6">
+        <h2 class="text-pixel-white text-5xl font-pixel">Faça seu cadastro</h2>
+        <form class="flex flex-col items-center gap-7">
+            <h2 class="font-pixel text-pixel-white text-xl">Preencha as
+                informações
+                abaixo</h2>
+            <div class="flex flex-col w-full gap-7">
+                <label for="name">
+                    <input type="text" name="name'" id="name"
+                        placeholder="Nome completo"
+                        class="font-pixel py-2 bg-transparent w-full outline-none text-lg border-b border-pixel-yellow">
+                </label>
+                <label for="user">
+                    <input type="text" name="user'" id="user"
+                        placeholder="Nome do usuário"
+                        class="font-pixel py-2 bg-transparent w-full outline-none text-lg border-b border-pixel-yellow">
+                </label>
+                <label for="password">
+                    <input type="password" name="password'" id="password"
+                        placeholder="senha"
+                        class="font-pixel py-2 bg-transparent w-full outline-none text-lg border-b border-pixel-yellow">
+                </label>
+                <label for="confPassword">
+                    <input type="password" name="confPassword'"
+                        id="confPassword"
+                        placeholder="Confirmar senha"
+                        class="font-pixel py-2 bg-transparent w-full outline-none text-lg border-b border-pixel-yellow">
+                </label>
+                <button
+                    class="font-pixel text-2xl text-pixel-white bg-pixel-yellow p-4 hover:bg-pixel-orange">Criar
+                    conta</button>
+                <div class>
+                    <span
+                        class="font-pixel text-lg text-pixel-white text-center">
+                        Já possui cadastro?
+                        <a
+                            [routerLink]="['/signin']"
+                            class="font-pixel text-lg text-pixel-yellow cursor-pointer">Clique
+                            aqui!</a>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<app-footer />
