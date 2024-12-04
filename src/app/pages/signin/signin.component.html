@@ -13,42 +13,7 @@
             Preencha as informações abaixo
           </p>
         </div>
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="my-6">
-          <div class="flex flex-col gap-8">
-            <input
-              type="text"
-              placeholder="Nome de Usuário"
-              formControlName="username"
-              class="input"
-            />
-            <input
-              type="password"
-              placeholder="Senha"
-              formControlName="password"
-              class="input"
-            />
-          </div>
-          <a class="font-pixel text-lg text-pixel-yellow cursor-pointer"
-            >Esqueceu sua senha?</a
-          >
-          <div class="grid grid-cols-7 my-8">
-            <button
-              class="col-start-1 col-end-4 bg-pixel-yellow font-pixel font-bold text-pixel-white text-lg"
-            >
-              LOG IN
-            </button>
-            <div class="col-start-4 col-end-8 mx-2">
-              <p class="font-pixel text-lg text-pixel-white">
-                Não possui cadastro?
-              </p>
-              <a
-                [routerLink]="['/signup']"
-                class="font-pixel text-lg text-pixel-yellow cursor-pointer"
-                >Cadastre-se aqui!</a
-              >
-            </div>
-          </div>
-        </form>
+        <app-signin-form></app-signin-form>
         <div class="flex items-center">
           <div class="flex-grow h-[2px] bg-pixel-yellow"></div>
           <p class="mx-4 font-pixel text-base text-pixel-white my-8">
