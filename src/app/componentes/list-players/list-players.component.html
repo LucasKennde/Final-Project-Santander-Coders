@@ -1,0 +1,13 @@
+<div
+  class="grid grid-rows-5 w-full min-w-[1056px] h-[614px] border-2 border-pixel-yellow bg-pixel-dark-teal/70 backdrop:filter backdrop-blur-md"
+>
+  @for (user of listUsers; track $index) { @if($index < 5){
+  <div
+    class="flex flex-row gap-3 w-full justify-between items-center px-4 font-pixel text-pixel-white"
+  >
+    <div class="flex-grow-1 font-bold text-7xl">{{ $index + 1 }}</div>
+    <div class="flex-grow-[4] flex-shrink text-4xl">{{ user.username }}</div>
+    <div class="flex-grow-1 text-4xl">{{ user.score }}pts</div>
+  </div>
+  } }
+</div>
