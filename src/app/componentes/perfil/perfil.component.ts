@@ -11,14 +11,19 @@ import { UsersService } from '../../services/users/users.service';
 export class PerfilComponent {
   userService: UsersService = inject(UsersService);
   user:any = signal<getUser>({ id: '', username: '' , image:'' })
+  userID:string  = ''
 
+  constructor(){
+    this.userID = this.getIdUser()
+  }
   ngOnInit() {
-    const idUser = this.getIdUser();
-    if (!idUser) {
-       return; 
-    }
+      this.getUser();
+   
+  }
+
+  getUser(){
   
-    this.userService.getUserById(idUser).subscribe({
+    this.userService.getUserById(this.userID).subscribe({
       next: (res) => {
         this.user.set(res);
         console.log(this.user());
@@ -27,12 +32,12 @@ export class PerfilComponent {
         console.error('Failed to fetch user:', err);
       }
     });
-  }
 
-  // getImage(){
-    
-  //   return "http://localhost:3000/"+this.user().image
-  // }
+  }
+  
+  getImage(){
+    return "http://localhost:3000/"+this.user().image
+  }
   getIdUser() {
     if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
       const token = localStorage.getItem('accessToken');

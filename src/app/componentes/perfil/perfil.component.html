@@ -1,12 +1,13 @@
 <div
     class="w-full h-full bg-pixel-dark-teal/20 backdrop:filter backdrop-blur-md border-r-2 border-pixel-yellow flex flex-col items-center justify-between py-20 font-pixel text-pixel-white">
-    <div>
-        <!-- <img [src]="user().image" alt> -->
+    <div
+        class="w-[170px] h-[170px] border-2 border-pixel-yellow bg-pixel-yellow">
+        <img [src]="getImage()" alt>
     </div>
-    <div>
+    <div class="uppercase text-3xl">
         <h1>USUARIO: {{user().username}}</h1>
-        <h1>Nome: {{user().image}}</h1>
-        <h1>SCORE:</h1>
+        <h1>Nome: {{user().name.split(' ')[0]}}</h1>
+        <h1>SCORE: {{user().score}}</h1>
     </div>
     <div class="w-3/5">
         <button
