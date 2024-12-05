@@ -20,7 +20,7 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    component:Error404Component
+    component:Error404Component,
   }
 
 ];
