@@ -9,31 +9,50 @@ import { UsersService } from '../../services/users/users.service';
   styleUrl: './perfil.component.css'
 })
 export class PerfilComponent {
-  userService = inject(UsersService)
+  userService: UsersService = inject(UsersService);
   user:any = signal<getUser>({ id: '', username: '' , image:'' })
 
-
-
-  ngOnInit(){
-    const idUser = this.getIdUser()
-   this.userService.getUserById(idUser).subscribe(res =>{
-    this.user.set(res)
-    console.log(this.user());
-    
-   })
-    
+  ngOnInit() {
+    const idUser = this.getIdUser();
+    if (!idUser) {
+       return; 
+    }
+  
+    this.userService.getUserById(idUser).subscribe({
+      next: (res) => {
+        this.user.set(res);
+        console.log(this.user());
+      },
+      error: (err) => {
+        console.error('Failed to fetch user:', err);
+      }
+    });
   }
 
-  getIdUser(){
-    const token = localStorage.getItem('accessToken');
-    if(!token) return
+  // getImage(){
+    
+  //   return "http://localhost:3000/"+this.user().image
+  // }
+  getIdUser() {
+    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
+      const token = localStorage.getItem('accessToken');
+      if (!token) return null;  
       const decoded = this.decodeJwt(token);
-      return decoded.sub
+      return decoded.sub;
+    }
+    return null; 
   }
+  
   decodeJwt(token: string): any {
-    const payload = token.split('.')[1]; 
-    return JSON.parse(atob(payload)); 
+    try {
+      const payload = token.split('.')[1];
+      return JSON.parse(atob(payload));
+    } catch (error) {
+      console.error('Failed to decode JWT:', error);
+      return null;  
+    }
   }
+  
 
 
 }
