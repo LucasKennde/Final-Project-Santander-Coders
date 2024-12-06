@@ -13,6 +13,10 @@ export class UsersService {
   }
 
   isLogged(){
-    return localStorage.getItem('accessToken') !== null;
+    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
+      const token = localStorage.getItem('accessToken')
+    return token && true ;
+    }
+    return false
   }
 }
