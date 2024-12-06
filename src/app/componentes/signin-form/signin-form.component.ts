@@ -41,7 +41,7 @@ export class SigninFormComponent {
   }
 
   ngOnInit() {
-    if (localStorage.getItem('accessToken')) {
+    if (typeof window !== 'undefined' && localStorage.getItem('accessToken')) {
       this.toastr.success('Você já está logado!', 'Redirecionando');
       this.router.navigate(['/']);
     }
