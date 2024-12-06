@@ -14,12 +14,7 @@ export class SigninService {
 
     return this.http.post<SignInResponse>(
       'http://localhost:3000/auth/sign-in',
-      userData,
-      {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-        }),
-      }
+      userData
     );
   }
 }
