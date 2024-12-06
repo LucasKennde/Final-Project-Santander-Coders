@@ -1,5 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { UsersService } from '../../services/users/users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -12,7 +13,7 @@ export class PerfilComponent {
   userService: UsersService = inject(UsersService);
   user:any = signal<getUser>({ id: '', username: '' , image:'' })
   userID:string  = ''
-
+  router = inject(Router)
   constructor(){
     this.userID = this.getIdUser()
   }
@@ -35,17 +36,19 @@ export class PerfilComponent {
 
   }
   
+  logout(){
+    localStorage.removeItem("accessToken")
+    this.router.navigate(['/signin'])
+  }
   getImage(){
     return "http://localhost:3000/"+this.user().image
   }
   getIdUser() {
-    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
       const token = localStorage.getItem('accessToken');
       if (!token) return null;  
       const decoded = this.decodeJwt(token);
       return decoded.sub;
-    }
-    return null; 
+    
   }
   
   decodeJwt(token: string): any {
