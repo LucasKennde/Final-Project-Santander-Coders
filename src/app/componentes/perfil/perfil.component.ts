@@ -41,7 +41,7 @@ export class PerfilComponent {
     this.router.navigate(['/signin'])
   }
   getImage(){
-    return "http://localhost:3000/"+this.user().image
+    return "https://api-coders.onrender.com/"+this.user().image
   }
   getIdUser() {
       const token = localStorage.getItem('accessToken');

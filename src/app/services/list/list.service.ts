@@ -10,7 +10,7 @@ export class ListService {
   constructor() {}
 
   getUsers(): Observable<IUser[]> {
-    return this.http.get<IUser[]>('http://localhost:3000/users');
+    return this.http.get<IUser[]>('https://api-coders.onrender.com/users');
   }
 }
 
