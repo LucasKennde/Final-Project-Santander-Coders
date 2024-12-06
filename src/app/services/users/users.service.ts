@@ -2,21 +2,17 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UsersService {
   private HTTP = inject(HttpClient);
-  constructor() { }
+  constructor() {}
 
-  getUserById(id:string){
-    return this.HTTP.get('http://localhost:3000/users/'+id);
+  getUserById(id: string) {
+    return this.HTTP.get('http://localhost:3000/users/' + id);
   }
 
-  isLogged(){
-    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
-      const token = localStorage.getItem('accessToken')
-    return token && true ;
-    }
-    return false
+  isLogged() {
+    return localStorage.getItem('accessToken') !== null;
   }
 }
