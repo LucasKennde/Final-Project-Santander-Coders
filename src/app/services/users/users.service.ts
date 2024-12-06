@@ -11,4 +11,8 @@ export class UsersService {
   getUserById(id:string){
     return this.HTTP.get('http://localhost:3000/users/'+id);
   }
+
+  isLogged(){
+    return localStorage.getItem('accessToken') !== null;
+  }
 }
