@@ -9,7 +9,7 @@ export class UsersService {
   constructor() {}
 
   getUserById(id: string) {
-    return this.HTTP.get('https://api-coders.onrender.com/users/' + id);
+    return this.HTTP.get('http://localhost:3000/users/' + id);
   }
 
   isLogged() {
