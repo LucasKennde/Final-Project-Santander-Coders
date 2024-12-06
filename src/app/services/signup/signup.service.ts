@@ -10,6 +10,6 @@ export class SignupService {
   constructor() {}
 
   public signup(userData: any) {
-    return this.HTTP.post('https://api-coders.onrender.com/auth/sign-up', userData);
+    return this.HTTP.post('http://localhost:3000/auth/sign-up', userData);
   }
 }
