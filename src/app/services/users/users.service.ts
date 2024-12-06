@@ -12,11 +12,10 @@ export class UsersService {
     return this.HTTP.get('http://localhost:3000/users/'+id);
   }
 
-  isLogged(){
-    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
-      const token = localStorage.getItem('accessToken')
-    return token && true ;
+  isLogged() {
+    if (typeof window !== 'undefined' && localStorage.getItem("acessToken")) {
+      return true;
     }
-    return false
+    return false;
   }
 }
